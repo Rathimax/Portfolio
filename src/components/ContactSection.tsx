@@ -73,7 +73,7 @@ const ContactSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
             FIND ME ON
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
@@ -99,10 +99,17 @@ const ContactSection = () => {
             >
               <Button
                 className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 h-auto text-lg font-medium flex items-center gap-2"
-                onClick={() => window.open("/resume.pdf", "_blank")}
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = "/resume.pdf";
+                  link.download = "resume.pdf";
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
               >
                 <FileText className="w-5 h-5" />
-                Download Resume
+                Download Resume (PNG)
               </Button>
             </motion.div>
           </div>

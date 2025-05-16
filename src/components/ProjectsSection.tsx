@@ -79,7 +79,9 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         className="max-w-7xl mx-auto"
       >
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">PROJECTS</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+            PROJECTS
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A showcase of my design and development work. Click on any project
             to learn more.
