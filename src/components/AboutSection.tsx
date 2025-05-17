@@ -14,6 +14,7 @@ const AboutSection = () => {
     { name: "JavaScript", level: 85, color: "bg-yellow-500" },
     { name: "3D Modeling", level: 75, color: "bg-purple-500" },
     { name: "React", level: 80, color: "bg-cyan-500" },
+    { name: "Python", level: 95, color: "bg-green-500" },
   ];
 
   return (
@@ -48,8 +49,8 @@ const AboutSection = () => {
               learnt something, I think…
             </p>
             <p className="text-lg leading-relaxed">
-              I am fluent in classics like C++, JavaScript, 3D Modeling and
-              React.
+              I am fluent in classics like C++, JavaScript, Python, 3D Modeling
+              and React.
             </p>
             <p className="text-lg leading-relaxed">
               My field of interest includes building new Web Technologies and

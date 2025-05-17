@@ -100,16 +100,14 @@ const ContactSection = () => {
               <Button
                 className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 h-auto text-lg font-medium flex items-center gap-2"
                 onClick={() => {
-                  const link = document.createElement("a");
-                  link.href = "/resume.pdf";
-                  link.download = "resume.pdf";
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
+                  window.open(
+                    "https://drive.google.com/file/d/1bu0YK5MNLB-v3njLdtKUv2VHBLS3GWvz/view?usp=share_link",
+                    "_blank",
+                  );
                 }}
               >
                 <FileText className="w-5 h-5" />
-                Download Resume (PNG)
+                Download Resume
               </Button>
             </motion.div>
           </div>

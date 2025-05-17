@@ -38,7 +38,7 @@ const defaultProjects: Project[] = [
   },
   {
     id: 2,
-    title: "3D Modeling Project",
+    title: "3D SPACE EXPLORATION PROJECT",
     description: "Interactive 3D models created for a virtual exhibition",
     image:
       "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&q=80",
@@ -135,7 +135,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                       </a>
                     </Button>
                   )}
-                  {project.liveUrl && (
+                  {project.liveUrl && project.title !== "Portfolio Website" && (
                     <Button variant="default" size="sm" asChild>
                       <a
                         href={project.liveUrl}
