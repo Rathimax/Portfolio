@@ -33,7 +33,7 @@ const defaultProjects: Project[] = [
     image:
       "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
     tags: ["React", "Tailwind CSS", "Framer Motion"],
-    githubUrl: "https://github.com/username/portfolio",
+    githubUrl: "https://github.com/Rathimax/Portfolio",
     liveUrl: "https://portfolioanur4thi.netlify.app/",
   },
   {
@@ -41,7 +41,7 @@ const defaultProjects: Project[] = [
     title: "3D SPACE EXPLORATION PROJECT",
     description: "Interactive 3D models created for a virtual exhibition",
     image:
-      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&q=80",
+      "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=800&q=80",
     tags: ["Blender", "Three.js", "WebGL"],
     githubUrl: "https://github.com/username/3d-project",
   },
@@ -51,10 +51,9 @@ const defaultProjects: Project[] = [
     description:
       "Real-time weather forecasting application with location services",
     image:
-      "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&q=80",
+      "https://images.unsplash.com/photo-1580193769210-b8d1c049a7d9?w=800&q=80",
     tags: ["JavaScript", "API Integration", "CSS"],
-    githubUrl: "https://github.com/username/weather-app",
-    liveUrl: "https://weather-forecast-demo.netlify.app",
+    githubUrl: "https://github.com/Rathimax/Weather-web-app",
   },
   {
     id: 4,
