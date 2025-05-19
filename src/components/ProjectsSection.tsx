@@ -57,6 +57,16 @@ const defaultProjects: Project[] = [
   },
   {
     id: 4,
+    title: "Space Shooter Game",
+    description: "Interactive browser-based space shooter with multiple levels",
+    image:
+      "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=800&q=80",
+    tags: ["JavaScript", "HTML", "Game Development"],
+    githubUrl: "https://github.com/Rathimax/Spaceshooter-Game",
+    liveUrl: "https://space-shooter-game.netlify.app/",
+  },
+  {
+    id: 5,
     title: "Coming Soon",
     description: "More projects are in development and will be added soon",
     image:
@@ -134,18 +144,20 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                       </a>
                     </Button>
                   )}
-                  {project.liveUrl && project.title !== "Portfolio Website" && (
-                    <Button variant="default" size="sm" asChild>
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Live Demo
-                      </a>
-                    </Button>
-                  )}
+                  {project.liveUrl &&
+                    project.title !== "Portfolio Website" &&
+                    project.title !== "Space Shooter Game" && (
+                      <Button variant="default" size="sm" asChild>
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="mr-2 h-4 w-4" />
+                          Live Demo
+                        </a>
+                      </Button>
+                    )}
                 </CardFooter>
               </Card>
             </motion.div>
