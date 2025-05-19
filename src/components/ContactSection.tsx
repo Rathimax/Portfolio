@@ -52,7 +52,7 @@ const ContactSection = () => {
       label: "Instagram",
     },
     {
-      href: "https://portfolioanur4thi.netlify.app/",
+      href: "https://abhayrajrathiportfolio.netlify.app",
       icon: <Globe className="w-5 h-5 text-foreground" />,
       label: "Portfolio",
     },
