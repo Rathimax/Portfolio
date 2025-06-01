@@ -120,8 +120,13 @@ const HeroSection = () => {
               variant="outline"
               size="lg"
               className={`text-lg border-green-500 text-green-500 hover:bg-green-500 hover:text-black transition-all duration-300 ${isAnimating ? "scale-105" : ""}`}
+              onClick={() =>
+                document
+                  .getElementById("about")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
             >
-              {marqueeText}
+              {marqueeText || "About Me"}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>

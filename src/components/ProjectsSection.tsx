@@ -67,6 +67,17 @@ const defaultProjects: Project[] = [
   },
   {
     id: 5,
+    title: "Website",
+    description:
+      "Modern responsive website with clean design and interactive elements",
+    image:
+      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
+    tags: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    githubUrl: "https://github.com/Rathimax/functional-webpage",
+    liveUrl: "https://abhayrajrathiwebsite.netlify.app/",
+  },
+  {
+    id: 6,
     title: "Coming Soon",
     description: "More projects are in development and will be added soon",
     image:
@@ -146,7 +157,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   )}
                   {project.liveUrl &&
                     project.title !== "Portfolio Website" &&
-                    project.title !== "Space Shooter Game" && (
+                    project.title !== "Space Shooter Game" &&
+                    project.title !== "Website" && (
                       <Button variant="default" size="sm" asChild>
                         <a
                           href={project.liveUrl}
