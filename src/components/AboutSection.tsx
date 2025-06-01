@@ -98,7 +98,7 @@ const AboutSection = () => {
               <div className="absolute inset-0 bg-green-400 rounded-full blur-md opacity-20 transform -translate-x-4 translate-y-4"></div>
               <div className="relative border-4 border-green-400 rounded-full overflow-hidden w-64 h-64 md:w-80 md:h-80">
                 <img
-                  src="https://media-hosting.imagekit.io/5315468a390042b3/WhatsApp%20Image%202025-04-28%20at%2023.06.46.jpeg?Expires=1841676923&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=uBwQocG9JDxnnUWrtwOLAVjRfTdynOltAWFRR5-4cupQ1XWCgEBaxbYBHZPZ94H4SUAMz~~LZo-Plq6-YpzjqlUHR81-vMg3phd~nHSYHkpgEiVJa8-Elz5G3FeUUUvWXM1ti4Yv1rwEBw0lqig5S-sR7~-OdHEFnNCO4DnZknu2cbb3~FpPs1ouAGFPFe-VQ4MW-B7jJl9ATDvSF0OowdsL9MRU9eMW1hxHdPwze3WvBV9Zn7AWNCq6eHedHOhlSNSWoS-7~nCWQQBeQwK9gBlDBfMqHsb~7cWpRmaamQwK5gbW1rJ3LHIwa4NM7qxcxrrm0R8P-ju6466Wm1PjcA__"
+                  src="/images/profile.jpeg"
                   alt="Abhay Raj Rathi"
                   className="w-full h-full object-cover"
                 />
