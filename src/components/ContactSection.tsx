@@ -126,11 +126,6 @@ const ContactSection = () => {
                 <span className="font-semibold">Blogs</span> — Coming Soon
               </div>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Designed and Developed by ABHAY RAJ RATHI
-              <br />
-              Copyright © 2025 ARR
-            </p>
           </motion.div>
         </div>
       </div>
