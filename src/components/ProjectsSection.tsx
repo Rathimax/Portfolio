@@ -34,19 +34,10 @@ const defaultProjects: Project[] = [
       "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
     tags: ["React", "Tailwind CSS", "Framer Motion"],
     githubUrl: "https://github.com/Rathimax/Portfolio",
-    liveUrl: "https://portfolioanur4thi.netlify.app/",
+    liveUrl: "https://abhayrajrathiportfolio.netlify.app",
   },
   {
     id: 2,
-    title: "3D SPACE EXPLORATION PROJECT",
-    description: "Interactive 3D models created for a virtual exhibition",
-    image:
-      "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=800&q=80",
-    tags: ["Blender", "Three.js", "WebGL"],
-    githubUrl: "https://github.com/username/3d-project",
-  },
-  {
-    id: 3,
     title: "Weather Forecast App",
     description:
       "Real-time weather forecasting application with location services",
@@ -54,6 +45,18 @@ const defaultProjects: Project[] = [
       "https://images.unsplash.com/photo-1580193769210-b8d1c049a7d9?w=800&q=80",
     tags: ["JavaScript", "API Integration", "CSS"],
     githubUrl: "https://github.com/Rathimax/Weather-web-app",
+    liveUrl: "https://weather-web-app-psi-three.vercel.app",
+  },
+  {
+    id: 3,
+    title: "Weather Forecast App v2",
+    description:
+      "Enhanced weather forecasting application with improved UI and additional features",
+    image:
+      "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&q=80",
+    tags: ["JavaScript", "API Integration", "CSS", "Weather API"],
+    githubUrl: "https://github.com/Rathimax/Weather-app-V2",
+    liveUrl: "https://weatherappversion2.vercel.app",
   },
   {
     id: 4,
@@ -74,10 +77,21 @@ const defaultProjects: Project[] = [
       "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
     tags: ["HTML", "CSS", "JavaScript", "Responsive Design"],
     githubUrl: "https://github.com/Rathimax/functional-webpage",
-    liveUrl: "https://abhayrajrathiwebsite.netlify.app/",
+    liveUrl: "https://functional-webpage.vercel.app",
   },
   {
     id: 6,
+    title: "Gym Progress Tracker",
+    description:
+      "Track your fitness journey with detailed workout logs and progress analytics",
+    image:
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80",
+    tags: ["Fitness", "Tracking", "Analytics"],
+    githubUrl: "https://github.com/Rathimax/gym-progress-tracker",
+    liveUrl: "https://gym-progress-tracker-six.vercel.app",
+  },
+  {
+    id: 7,
     title: "Coming Soon",
     description: "More projects are in development and will be added soon",
     image:
@@ -155,21 +169,18 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                       </a>
                     </Button>
                   )}
-                  {project.liveUrl &&
-                    project.title !== "Portfolio Website" &&
-                    project.title !== "Space Shooter Game" &&
-                    project.title !== "Website" && (
-                      <Button variant="default" size="sm" asChild>
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <ExternalLink className="mr-2 h-4 w-4" />
-                          Live Demo
-                        </a>
-                      </Button>
-                    )}
+                  {project.liveUrl && project.title !== "Coming Soon" && (
+                    <Button variant="default" size="sm" asChild>
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Live Demo
+                      </a>
+                    </Button>
+                  )}
                 </CardFooter>
               </Card>
             </motion.div>
