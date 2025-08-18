@@ -63,10 +63,10 @@ const defaultProjects: Project[] = [
     title: "Space Shooter Game",
     description: "Interactive browser-based space shooter with multiple levels",
     image:
-      "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=800&q=80",
+      "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80",
     tags: ["JavaScript", "HTML", "Game Development"],
     githubUrl: "https://github.com/Rathimax/Spaceshooter-Game",
-    liveUrl: "https://space-shooter-game.netlify.app/",
+    liveUrl: "https://spaceshooter-game.vercel.app",
   },
   {
     id: 5,
@@ -85,7 +85,7 @@ const defaultProjects: Project[] = [
     description:
       "Track your fitness journey with detailed workout logs and progress analytics",
     image:
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80",
+      "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80",
     tags: ["Fitness", "Tracking", "Analytics"],
     githubUrl: "https://github.com/Rathimax/gym-progress-tracker",
     liveUrl: "https://gym-progress-tracker-six.vercel.app",
@@ -95,7 +95,7 @@ const defaultProjects: Project[] = [
     title: "Coming Soon",
     description: "More projects are in development and will be added soon",
     image:
-      "https://images.unsplash.com/photo-1516383740770-fbcc5ccbece0?w=800&q=80",
+      "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&q=80",
     tags: ["Future", "Development"],
   },
 ];
