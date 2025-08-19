@@ -31,7 +31,7 @@ const defaultProjects: Project[] = [
     title: "Portfolio Website",
     description: "Personal portfolio website built with React and Tailwind CSS",
     image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
     tags: ["React", "Tailwind CSS", "Framer Motion"],
     githubUrl: "https://github.com/Rathimax/Portfolio",
     liveUrl: "https://abhayrajrathiportfolio.netlify.app",

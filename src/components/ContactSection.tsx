@@ -100,10 +100,7 @@ const ContactSection = () => {
               <Button
                 className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 h-auto text-lg font-medium flex items-center gap-2"
                 onClick={() => {
-                  window.open(
-                    "https://drive.google.com/file/d/1bu0YK5MNLB-v3njLdtKUv2VHBLS3GWvz/view?usp=share_link",
-                    "_blank",
-                  );
+                  window.open("/Resume_Abhay_Raj_Rathi.pdf", "_blank");
                 }}
               >
                 <FileText className="w-5 h-5" />
