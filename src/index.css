@@ -69,41 +69,26 @@
 @layer base {
   * {
     @apply border-border;
-    cursor: none !important; /* Hide default cursor */
   }
   body {
     @apply bg-background text-foreground;
-    cursor: none !important;
   }
 }
 
-/* Custom Cursor Styles */
-.custom-cursor {
-  position: fixed;
-  width: 15px; /* 25% bigger than 12px */
-  height: 15px; /* 25% bigger than 12px */
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition:
-    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.05s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform, background-color, box-shadow;
-}
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
 
-.custom-cursor-trail {
-  position: fixed;
-  width: 30px; /* 25% bigger than 24px */
-  height: 30px; /* 25% bigger than 24px */
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
-  transition:
-    background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: blur(4px); /* Slightly more blur for bigger size */
-  will-change: transform, background;
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
 }
