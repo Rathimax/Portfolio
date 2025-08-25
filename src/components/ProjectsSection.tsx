@@ -121,25 +121,32 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set());
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
+  const handleCardClick = (projectId: number) => {
+    setFlippedCards((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(projectId)) {
+        newSet.delete(projectId);
+      } else {
+        newSet.add(projectId);
+      }
+      return newSet;
+    });
+  };
+
   const handleCardHover = (projectId: number) => {
     setHoveredCard(projectId);
-    // Add a delay before flipping to allow pop-up animation to complete
-    setTimeout(() => {
-      setFlippedCards((prev) => {
-        const newSet = new Set(prev);
-        newSet.add(projectId);
-        return newSet;
-      });
-    }, 200);
   };
 
   const handleCardLeave = (projectId: number) => {
     setHoveredCard(null);
-    setFlippedCards((prev) => {
-      const newSet = new Set(prev);
-      newSet.delete(projectId);
-      return newSet;
-    });
+    // Add a small delay to prevent image flash during flip transition
+    setTimeout(() => {
+      setFlippedCards((prev) => {
+        const newSet = new Set(prev);
+        newSet.delete(projectId);
+        return newSet;
+      });
+    }, 50);
   };
 
   const handleButtonClick = (event: React.MouseEvent) => {
@@ -183,19 +190,22 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 className="h-[400px] perspective-1000"
                 onMouseEnter={() => handleCardHover(project.id)}
                 onMouseLeave={() => handleCardLeave(project.id)}
+                onClick={() => handleCardClick(project.id)}
               >
                 <div
-                  className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d cursor-pointer ${
+                  className={`relative w-full h-full transition-transform duration-500 transform-style-preserve-3d cursor-pointer ${
                     isFlipped ? "rotate-y-180" : ""
                   }`}
                 >
                   {/* Front of card */}
-                  <Card className="absolute inset-0 w-full h-full flex flex-col overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 backface-hidden">
+                  <Card className="absolute inset-0 w-full h-full flex flex-col overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 backface-hidden bg-background">
                     <div className="h-48 overflow-hidden">
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                        className={`w-full h-full object-cover transition-transform duration-300 ${
+                          !isFlipped ? "hover:scale-110" : ""
+                        }`}
                       />
                     </div>
                     <CardHeader>
@@ -245,7 +255,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   </Card>
 
                   {/* Back of card */}
-                  <Card className="absolute inset-0 w-full h-full flex flex-col overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 backface-hidden rotate-y-180 bg-gradient-to-br from-primary/5 to-secondary/5">
+                  <Card className="absolute inset-0 w-full h-full flex flex-col overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 backface-hidden rotate-y-180 bg-gradient-to-br from-primary/5 to-secondary/5 z-10">
                     <CardHeader className="pb-4">
                       <CardTitle className="text-primary">
                         {project.title}
