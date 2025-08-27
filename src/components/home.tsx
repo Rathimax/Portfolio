@@ -7,7 +7,7 @@ import ContactSection from "./ContactSection";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-light-cream dark:bg-black text-black dark:text-white transition-colors duration-300">
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -49,7 +49,7 @@ const Home = () => {
       </motion.div>
 
       {/* Footer */}
-      <footer className="py-8 text-center text-sm text-green-500 border-t border-gray-800">
+      <footer className="py-8 text-center text-sm text-green-500 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
         <p>Designed and Developed by ABHAY RAJ RATHI</p>
         <p>Copyright © 2025 ARR</p>
       </footer>

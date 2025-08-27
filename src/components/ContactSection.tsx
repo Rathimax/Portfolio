@@ -64,7 +64,10 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 px-4 md:px-8 lg:px-16 bg-black">
+    <section
+      id="contact"
+      className="py-20 px-4 md:px-8 lg:px-16 bg-light-cream dark:bg-gray-900 transition-colors duration-300"
+    >
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -73,7 +76,7 @@ const ContactSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
             FIND ME ON
           </h2>
           <p className="text-lg text-muted-foreground mb-8">

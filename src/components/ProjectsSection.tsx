@@ -155,7 +155,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   };
 
   return (
-    <section className="py-20 px-4 md:px-8 lg:px-16 bg-black text-foreground">
+    <section className="py-20 px-4 md:px-8 lg:px-16 bg-light-cream dark:bg-gray-900 text-foreground transition-colors duration-300">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -164,7 +164,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         className="max-w-7xl mx-auto"
       >
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
             PROJECTS
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

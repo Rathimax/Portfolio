@@ -45,9 +45,9 @@ const HeroSection = () => {
   const nameLetters = "ABHAY RAJ RATHI".split("");
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center justify-center bg-black text-white overflow-hidden">
+    <section className="relative min-h-screen w-full flex flex-col items-center justify-center bg-light-cream dark:bg-black text-black dark:text-white overflow-hidden transition-colors duration-300">
       {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black opacity-80 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-light-cream via-gray-200 to-light-cream dark:from-black dark:via-gray-900 dark:to-black opacity-80 z-0 transition-colors duration-300"></div>
       {/* Animated background text */}
       <div className="absolute inset-0 flex flex-wrap justify-center items-center opacity-5 z-0 overflow-hidden">
         {Array.from({ length: 20 }).map((_, index) => (
@@ -101,7 +101,11 @@ const HeroSection = () => {
                 initial="hidden"
                 animate="visible"
                 className="inline-block"
-                style={{ color: letter !== " " ? "#10b981" : "white" }}
+                className={
+                  letter !== " "
+                    ? "text-green-500"
+                    : "text-black dark:text-white"
+                }
               >
                 {letter === " " ? "\u00A0" : letter}
               </motion.span>
@@ -119,7 +123,7 @@ const HeroSection = () => {
             <Button
               variant="outline"
               size="lg"
-              className={`text-lg border-green-500 text-green-500 hover:bg-green-500 hover:text-black transition-all duration-300 ${isAnimating ? "scale-105" : ""}`}
+              className={`text-lg border-green-500 text-green-500 hover:bg-green-500 hover:text-white dark:hover:text-black transition-all duration-300 ${isAnimating ? "scale-105" : ""}`}
               onClick={() =>
                 document
                   .getElementById("about")
