@@ -71,8 +71,7 @@ const defaultProjects: Project[] = [
     description: "Interactive browser-based space shooter with multiple levels",
     detailedDescription:
       "An engaging space shooter game built with HTML5 Canvas and JavaScript. Features include multiple enemy types, power-ups, progressive difficulty levels, particle effects, sound effects, high score tracking, and smooth 60fps gameplay. Implements collision detection, sprite animations, and responsive controls for an immersive gaming experience.",
-    image:
-      "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80",
+    image: "/images/capsule_616x353.jpg",
     tags: ["JavaScript", "HTML", "Game Development"],
     githubUrl: "https://github.com/Rathimax/Spaceshooter-Game",
     liveUrl: "https://spaceshooter-game.vercel.app",
