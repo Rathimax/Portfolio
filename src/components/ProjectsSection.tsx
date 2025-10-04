@@ -154,7 +154,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   };
 
   return (
-    <section className="py-20 px-4 md:px-8 lg:px-16 bg-light-cream dark:bg-gray-900 text-foreground transition-colors duration-300">
+    <section className="py-20 px-4 md:px-8 lg:px-16 glass-card text-foreground transition-colors duration-300 dotted-background">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

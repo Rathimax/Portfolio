@@ -37,7 +37,7 @@ const ThemeToggleButton: React.FC<ThemeToggleButtonProps> = ({
             onClick={onToggle}
             variant="outline"
             size="lg"
-            className="bg-background/80 backdrop-blur-sm border-border hover:bg-accent hover:text-accent-foreground transition-all duration-300 shadow-lg"
+            className="bg-white/10 dark:bg-black/20 backdrop-blur-xl border-white/30 dark:border-white/20 hover:bg-white/20 dark:hover:bg-black/30 hover:text-accent-foreground transition-all duration-300 shadow-xl"
           >
             {isDarkMode ? (
               <Sun className="h-5 w-5 text-yellow-500" />

@@ -123,7 +123,7 @@ const HeroSection = () => {
             <Button
               variant="outline"
               size="lg"
-              className={`text-lg border-green-500 text-green-500 hover:bg-green-500 hover:text-white dark:hover:text-black transition-all duration-300 ${isAnimating ? "scale-105" : ""}`}
+              className={`text-lg border-green-500 text-green-500 hover:bg-green-500 hover:text-white dark:hover:text-black transition-all duration-300 glass-card ${isAnimating ? "scale-105" : ""}`}
               onClick={() =>
                 document
                   .getElementById("about")
