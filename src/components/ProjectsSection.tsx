@@ -181,11 +181,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -10, scale: 1.05 }}
-                animate={{
-                  scale: hoveredCard === project.id ? 1.05 : 1,
-                  y: hoveredCard === project.id ? -10 : 0,
-                }}
+                whileHover={{ y: -8 }}
                 className="h-[400px] perspective-1000"
                 onMouseEnter={() => handleCardHover(project.id)}
                 onMouseLeave={() => handleCardLeave(project.id)}

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import HeroSection from "./HeroSection";
 import AboutSection from "./AboutSection";
 import ProjectsSection from "./ProjectsSection";
+import CertificationsSection from "./CertificationsSection";
 import ContactSection from "./ContactSection";
 
 const Home = () => {
@@ -36,6 +37,16 @@ const Home = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         <ProjectsSection />
+      </motion.div>
+
+      {/* Certifications Section */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <CertificationsSection />
       </motion.div>
 
       {/* Contact Section */}
