@@ -41,6 +41,19 @@ const defaultProjects: Project[] = [
   },
   {
     id: 2,
+    title: "AI Chatbot",
+    description:
+      "Intelligent conversational AI chatbot with natural language processing",
+    detailedDescription:
+      "An advanced AI-powered chatbot application featuring natural language understanding and context-aware responses. Built with modern AI technologies, this chatbot provides intelligent conversations, learns from interactions, and offers personalized responses. Features include real-time messaging, conversation history, multi-turn dialogue support, and a clean, intuitive user interface. Perfect for customer support, information retrieval, and interactive assistance.",
+    image:
+      "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80",
+    tags: ["AI", "Chatbot", "NLP", "React"],
+    githubUrl: "https://github.com/Rathimax/Ai-chatbot",
+    liveUrl: "https://ai-chatbot-one-teal-95.vercel.app",
+  },
+  {
+    id: 3,
     title: "Weather Forecast App",
     description:
       "Real-time weather forecasting application with location services",
@@ -53,7 +66,7 @@ const defaultProjects: Project[] = [
     liveUrl: "https://weather-web-app-psi-three.vercel.app",
   },
   {
-    id: 3,
+    id: 4,
     title: "Weather Forecast App v2",
     description:
       "Enhanced weather forecasting application with improved UI and additional features",
@@ -66,7 +79,20 @@ const defaultProjects: Project[] = [
     liveUrl: "https://weatherappversion2.vercel.app",
   },
   {
-    id: 4,
+    id: 5,
+    title: "Weather Forecast App v3",
+    description:
+      "Latest version with advanced features and modern design",
+    detailedDescription:
+      "The most advanced version of the weather app featuring a completely redesigned interface with modern UI/UX principles. Includes real-time weather updates, extended 7-day forecasts, interactive weather maps, air quality index, UV index tracking, wind speed and direction visualization, and advanced search with autocomplete. Built with the latest web technologies for optimal performance and user experience.",
+    image:
+      "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&q=80",
+    tags: ["JavaScript", "API Integration", "Modern UI", "Weather API"],
+    githubUrl: "https://github.com/Rathimax/weather-app-v3",
+    liveUrl: "https://weather-app-v3-five.vercel.app",
+  },
+  {
+    id: 6,
     title: "Space Shooter Game",
     description: "Interactive browser-based space shooter with multiple levels",
     detailedDescription:
@@ -77,7 +103,7 @@ const defaultProjects: Project[] = [
     liveUrl: "https://spaceshooter-game.vercel.app",
   },
   {
-    id: 5,
+    id: 7,
     title: "Website",
     description:
       "Modern responsive website with clean design and interactive elements",
@@ -90,7 +116,7 @@ const defaultProjects: Project[] = [
     liveUrl: "https://functional-webpage.vercel.app",
   },
   {
-    id: 6,
+    id: 8,
     title: "Gym Progress Tracker",
     description:
       "Track your fitness journey with detailed workout logs and progress analytics",
@@ -103,7 +129,7 @@ const defaultProjects: Project[] = [
     liveUrl: "https://gym-progress-tracker-six.vercel.app",
   },
   {
-    id: 7,
+    id: 9,
     title: "Coming Soon",
     description: "More projects are in development and will be added soon",
     detailedDescription:
