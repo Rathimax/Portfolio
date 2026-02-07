@@ -53,7 +53,7 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="py-20 bg-light-cream dark:bg-black text-black dark:text-white min-h-screen flex flex-col justify-center transition-colors duration-300 dotted-background"
+      className="py-20 bg-transparent text-black dark:text-white min-h-screen flex flex-col justify-center transition-colors duration-300"
     >
       <div className="container mx-auto px-4">
         <motion.div

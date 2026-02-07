@@ -98,7 +98,7 @@ const CertificationsSection: React.FC<CertificationsSectionProps> = ({
   };
 
   return (
-    <section className="py-20 px-4 md:px-8 lg:px-16 glass-card text-foreground transition-colors duration-300 dotted-background">
+    <section className="py-20 px-4 md:px-8 lg:px-16 bg-transparent text-foreground transition-colors duration-300">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -132,9 +132,8 @@ const CertificationsSection: React.FC<CertificationsSectionProps> = ({
                 onClick={() => handleCardClick(cert.id)}
               >
                 <div
-                  className={`relative w-full h-full transition-transform duration-500 transform-style-preserve-3d cursor-pointer ${
-                    isFlipped ? "rotate-y-180" : ""
-                  }`}
+                  className={`relative w-full h-full transition-transform duration-500 transform-style-preserve-3d cursor-pointer ${isFlipped ? "rotate-y-180" : ""
+                    }`}
                 >
                   {/* Front of card */}
                   <Card className="absolute inset-0 w-full h-full flex flex-col overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 backface-hidden bg-background">
@@ -142,9 +141,8 @@ const CertificationsSection: React.FC<CertificationsSectionProps> = ({
                       <img
                         src={cert.image}
                         alt={cert.title}
-                        className={`w-auto h-full object-contain transition-transform duration-300 ${
-                          !isFlipped ? "hover:scale-110" : ""
-                        }`}
+                        className={`w-auto h-full object-contain transition-transform duration-300 ${!isFlipped ? "hover:scale-110" : ""
+                          }`}
                       />
                     </div>
                     <CardHeader>

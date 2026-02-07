@@ -66,7 +66,7 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="py-20 px-4 md:px-8 lg:px-16 glass-card dotted-background"
+      className="py-20 px-4 md:px-8 lg:px-16 bg-transparent"
     >
       <div className="max-w-6xl mx-auto">
         <motion.div

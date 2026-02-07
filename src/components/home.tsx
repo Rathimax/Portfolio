@@ -5,11 +5,10 @@ import AboutSection from "./AboutSection";
 import ProjectsSection from "./ProjectsSection";
 import CertificationsSection from "./CertificationsSection";
 import ContactSection from "./ContactSection";
-import WaveDivider from "./WaveDivider";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-light-cream dark:bg-black text-black dark:text-white transition-colors duration-300">
+    <div className="min-h-screen bg-light-cream dark:bg-black text-black dark:text-white transition-colors duration-300 dotted-background">
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -18,11 +17,6 @@ const Home = () => {
       >
         <HeroSection />
       </motion.div>
-
-      {/* Wave divider - Hero to About */}
-      <div className="bg-light-cream dark:bg-black transition-colors duration-300">
-        <WaveDivider />
-      </div>
 
       {/* About Section */}
       <motion.div
@@ -35,11 +29,6 @@ const Home = () => {
         <AboutSection />
       </motion.div>
 
-      {/* Wave divider - About to Projects */}
-      <div className="bg-light-cream dark:bg-black transition-colors duration-300">
-        <WaveDivider />
-      </div>
-
       {/* Projects Section */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -50,11 +39,6 @@ const Home = () => {
         <ProjectsSection />
       </motion.div>
 
-      {/* Wave divider - Projects to Certifications */}
-      <div className="bg-light-cream dark:bg-black transition-colors duration-300">
-        <WaveDivider />
-      </div>
-
       {/* Certifications Section */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -64,11 +48,6 @@ const Home = () => {
       >
         <CertificationsSection />
       </motion.div>
-
-      {/* Wave divider - Certifications to Contact */}
-      <div className="bg-light-cream dark:bg-black transition-colors duration-300">
-        <WaveDivider />
-      </div>
 
       {/* Contact Section */}
       <motion.div
@@ -90,4 +69,3 @@ const Home = () => {
 };
 
 export default Home;
-

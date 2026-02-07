@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 import Typewriter from "./Typewriter";
+import ParallaxLayers from "./ParallaxLayers";
 
 const HeroSection = () => {
   const [marqueeText, setMarqueeText] = useState("");
@@ -60,6 +61,8 @@ const HeroSection = () => {
         className="absolute inset-0 bg-gradient-to-br from-light-cream via-gray-200 to-light-cream dark:from-black dark:via-gray-900 dark:to-black opacity-80 z-0 transition-colors duration-300"
         style={{ y: backgroundY }}
       />
+      {/* Tech-themed parallax layers */}
+      <ParallaxLayers />
       {/* Animated background text */}
       <div className="absolute inset-0 flex flex-wrap justify-center items-center opacity-5 z-0 overflow-hidden">
         {Array.from({ length: 20 }).map((_, index) => (
@@ -140,11 +143,31 @@ const HeroSection = () => {
               variant="outline"
               size="lg"
               className={`text-lg border-green-500 text-green-500 hover:bg-green-500 hover:text-white dark:hover:text-black transition-all duration-300 glass-card ${isAnimating ? "scale-105" : ""}`}
-              onClick={() =>
-                document
-                  .getElementById("about")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => {
+                const aboutSection = document.getElementById("about");
+                if (aboutSection) {
+                  const targetPosition = aboutSection.offsetTop;
+                  const startPosition = window.pageYOffset;
+                  const distance = targetPosition - startPosition;
+                  const duration = 2500; // 2.5 seconds for slow scroll
+                  let start: number | null = null;
+
+                  const easeInOutCubic = (t: number) =>
+                    t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+                  const animation = (currentTime: number) => {
+                    if (start === null) start = currentTime;
+                    const timeElapsed = currentTime - start;
+                    const progress = Math.min(timeElapsed / duration, 1);
+                    const ease = easeInOutCubic(progress);
+                    window.scrollTo(0, startPosition + distance * ease);
+                    if (timeElapsed < duration) {
+                      requestAnimationFrame(animation);
+                    }
+                  };
+                  requestAnimationFrame(animation);
+                }
+              }}
             >
               {marqueeText || "About Me"}
               <ArrowRight className="ml-2 h-5 w-5" />
