@@ -1,11 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
+import Typewriter from "./Typewriter";
 
 const HeroSection = () => {
   const [marqueeText, setMarqueeText] = useState("");
   const [isAnimating, setIsAnimating] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Parallax scroll effect
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   // Animation for the marquee text
   useEffect(() => {
@@ -45,9 +54,12 @@ const HeroSection = () => {
   const nameLetters = "ABHAY RAJ RATHI".split("");
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center justify-center bg-light-cream dark:bg-black text-black dark:text-white overflow-hidden transition-colors duration-300">
-      {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-light-cream via-gray-200 to-light-cream dark:from-black dark:via-gray-900 dark:to-black opacity-80 z-0 transition-colors duration-300"></div>
+    <section ref={sectionRef} className="relative min-h-screen w-full flex flex-col items-center justify-center bg-light-cream dark:bg-black text-black dark:text-white overflow-hidden transition-colors duration-300">
+      {/* Gradient background with parallax */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-br from-light-cream via-gray-200 to-light-cream dark:from-black dark:via-gray-900 dark:to-black opacity-80 z-0 transition-colors duration-300"
+        style={{ y: backgroundY }}
+      />
       {/* Animated background text */}
       <div className="absolute inset-0 flex flex-wrap justify-center items-center opacity-5 z-0 overflow-hidden">
         {Array.from({ length: 20 }).map((_, index) => (
@@ -100,18 +112,22 @@ const HeroSection = () => {
                 variants={letterVariants}
                 initial="hidden"
                 animate="visible"
-                className="inline-block"
-                className={
-                  letter !== " "
-                    ? "text-green-500"
-                    : "text-black dark:text-white"
-                }
+                className={`inline-block ${letter !== " " ? "text-green-500" : "text-black dark:text-white"}`}
               >
                 {letter === " " ? "\u00A0" : letter}
               </motion.span>
             ))}
           </span>
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 0.5 }}
+          className="text-xl md:text-2xl mb-8 text-gray-600 dark:text-gray-400"
+        >
+          I'm a <Typewriter words={["Developer", "Designer", "Creator", "Problem Solver"]} />
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}

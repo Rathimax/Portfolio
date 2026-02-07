@@ -2,10 +2,13 @@ import { Suspense, useEffect, useState } from "react";
 import { useRoutes, Routes, Route } from "react-router-dom";
 import Home from "./components/home";
 import ThemeToggleButton from "./components/ThemeToggleButton";
+import Preloader from "./components/Preloader";
+import ScrollProgressBar from "./components/ScrollProgressBar";
 import routes from "tempo-routes";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   const toggleTheme = () => {
     const newTheme = !isDarkMode;
@@ -84,13 +87,17 @@ function App() {
   }, []);
 
   return (
-    <Suspense fallback={<p>Loading...</p>}>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-      {import.meta.env.VITE_TEMPO === "true" && useRoutes(routes)}
-      <ThemeToggleButton isDarkMode={isDarkMode} onToggle={toggleTheme} />
-    </Suspense>
+    <>
+      {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
+      {!isLoading && <ScrollProgressBar />}
+      <Suspense fallback={<p>Loading...</p>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+        {import.meta.env.VITE_TEMPO === "true" && useRoutes(routes)}
+        <ThemeToggleButton isDarkMode={isDarkMode} onToggle={toggleTheme} />
+      </Suspense>
+    </>
   );
 }
 

@@ -33,6 +33,10 @@ const AboutSection = () => {
       name: "GitHub",
       logo: "/images/skills/github.png",
     },
+    {
+      name: "Swift",
+      logo: "/images/skills/swift.png",
+    },
   ];
 
   const creativeSkills: Skill[] = [
@@ -102,21 +106,39 @@ const AboutSection = () => {
                 </h4>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
                   {technicalSkills.map((skill, index) => (
-                    <div
+                    <motion.div
                       key={index}
-                      className="flex flex-col items-center space-y-3"
+                      initial={{ opacity: 0, scale: 0.5, y: 20 }}
+                      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 20,
+                        delay: index * 0.1,
+                      }}
+                      whileHover={{
+                        scale: 1.1,
+                        transition: { duration: 0.2 }
+                      }}
+                      className="flex flex-col items-center space-y-3 cursor-pointer"
                     >
-                      <div className="w-16 h-16 flex items-center justify-center bg-gray-200 dark:bg-gray-800 rounded-lg p-2 transition-colors duration-300">
+                      <motion.div
+                        className="w-16 h-16 flex items-center justify-center bg-gray-200 dark:bg-gray-800 rounded-lg p-2 transition-colors duration-300"
+                        whileHover={{
+                          boxShadow: "0 0 20px rgba(34, 197, 94, 0.4)",
+                        }}
+                      >
                         <img
                           src={skill.logo}
                           alt={skill.name}
                           className="w-full h-full object-contain"
                         />
-                      </div>
+                      </motion.div>
                       <span className="font-medium text-center">
                         {skill.name}
                       </span>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
@@ -129,21 +151,39 @@ const AboutSection = () => {
                 </h4>
                 <div className="grid grid-cols-2 sm:grid-cols-2 gap-6">
                   {creativeSkills.map((skill, index) => (
-                    <div
+                    <motion.div
                       key={index}
-                      className="flex flex-col items-center space-y-3"
+                      initial={{ opacity: 0, scale: 0.5, y: 20 }}
+                      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 20,
+                        delay: index * 0.1 + 0.6, // Offset from technical skills
+                      }}
+                      whileHover={{
+                        scale: 1.1,
+                        transition: { duration: 0.2 }
+                      }}
+                      className="flex flex-col items-center space-y-3 cursor-pointer"
                     >
-                      <div className="w-16 h-16 flex items-center justify-center bg-gray-200 dark:bg-gray-800 rounded-lg p-2 transition-colors duration-300">
+                      <motion.div
+                        className="w-16 h-16 flex items-center justify-center bg-gray-200 dark:bg-gray-800 rounded-lg p-2 transition-colors duration-300"
+                        whileHover={{
+                          boxShadow: "0 0 20px rgba(192, 132, 252, 0.4)",
+                        }}
+                      >
                         <img
                           src={skill.logo}
                           alt={skill.name}
                           className="w-full h-full object-contain"
                         />
-                      </div>
+                      </motion.div>
                       <span className="font-medium text-center">
                         {skill.name}
                       </span>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>

@@ -130,6 +130,18 @@ const defaultProjects: Project[] = [
   },
   {
     id: 9,
+    title: "Habit Tracker iOS",
+    description:
+      "Native iOS habit tracking app built with Swift and SwiftUI",
+    detailedDescription:
+      "A beautifully designed iOS habit tracking application to help users build and maintain positive habits. Built with Swift and SwiftUI, featuring a clean native interface, daily habit check-ins, streak tracking, progress analytics, reminder notifications, and iCloud sync. Implements Core Data for local persistence and includes widgets for quick habit completion. The app follows iOS design guidelines for an intuitive user experience.",
+    image:
+      "/images/habit-tracker-ios.png",
+    tags: ["Swift", "SwiftUI", "iOS", "Core Data"],
+    githubUrl: "https://github.com/Rathimax/Habbit-tracker-IOS",
+  },
+  {
+    id: 10,
     title: "Coming Soon",
     description: "More projects are in development and will be added soon",
     detailedDescription:
@@ -214,9 +226,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 onClick={() => handleCardClick(project.id)}
               >
                 <div
-                  className={`relative w-full h-full transition-transform duration-500 transform-style-preserve-3d cursor-pointer ${
-                    isFlipped ? "rotate-y-180" : ""
-                  }`}
+                  className={`relative w-full h-full transition-transform duration-500 transform-style-preserve-3d cursor-pointer ${isFlipped ? "rotate-y-180" : ""
+                    }`}
                 >
                   {/* Front of card */}
                   <Card className="absolute inset-0 w-full h-full flex flex-col overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 backface-hidden bg-background">
@@ -224,9 +235,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                       <img
                         src={project.image}
                         alt={project.title}
-                        className={`w-full h-full object-cover transition-transform duration-300 ${
-                          !isFlipped ? "hover:scale-110" : ""
-                        }`}
+                        className={`w-full h-full object-cover transition-transform duration-300 ${!isFlipped ? "hover:scale-110" : ""
+                          }`}
                       />
                     </div>
                     <CardHeader>
