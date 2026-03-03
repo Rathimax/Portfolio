@@ -126,7 +126,7 @@ const defaultProjects: Project[] = [
       "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80",
     tags: ["Fitness", "Tracking", "Analytics"],
     githubUrl: "https://github.com/Rathimax/gym-progress-tracker",
-    liveUrl: "https://gym-progress-tracker-six.vercel.app",
+    liveUrl: "https://fittrack-rathiabhay-app.vercel.app",
   },
   {
     id: 9,
