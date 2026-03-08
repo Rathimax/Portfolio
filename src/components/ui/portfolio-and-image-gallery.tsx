@@ -156,8 +156,6 @@ export const RadialScrollGallery = forwardRef<
         const containerRef = useRef<HTMLUListElement>(null);
         const childRef = useRef<HTMLLIElement>(null);
 
-        const mergedRef = useMergeRefs(ref, pinRef);
-
         const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
         const [childSize, setChildSize] = useState<{ w: number; h: number } | null>(
             null
@@ -279,99 +277,101 @@ export const RadialScrollGallery = forwardRef<
         return (
             <div
                 key="desktop-gallery"
-                ref={mergedRef}
+                ref={ref}
                 className={`w-full relative ${className}`}
                 {...rest}
             >
-                <div
-                    className='relative w-full overflow-hidden'
-                    style={{
-                        height: `${visibleAreaHeight}px`,
-                        maskImage:
-                            'linear-gradient(to top, transparent 0%, black 15%, black 100%)',
-                        WebkitMaskImage:
-                            'linear-gradient(to top, transparent 0%, black 15%, black 100%)',
-                        transformStyle: 'preserve-3d',
-                        backfaceVisibility: 'hidden',
-                    }}
-                >
-                    <ul
-                        ref={containerRef}
-                        className={`
+                <div ref={pinRef} className="w-full relative">
+                    <div
+                        className='relative w-full overflow-hidden'
+                        style={{
+                            height: `${visibleAreaHeight}px`,
+                            maskImage:
+                                'linear-gradient(to top, transparent 0%, black 15%, black 100%)',
+                            WebkitMaskImage:
+                                'linear-gradient(to top, transparent 0%, black 15%, black 100%)',
+                            transformStyle: 'preserve-3d',
+                            backfaceVisibility: 'hidden',
+                        }}
+                    >
+                        <ul
+                            ref={containerRef}
+                            className={`
               absolute left-1/2 -translate-x-1/2 will-change-transform m-0 p-0 list-none
               transition-opacity duration-500 ease-out
               ${disabled ? 'opacity-50 pointer-events-none grayscale' : ''}
               ${isMounted ? 'opacity-100' : 'opacity-0'}
             `}
-                        dir={direction}
-                        style={{
-                            width: circleDiameter,
-                            height: circleDiameter,
-                            bottom: -(circleDiameter * 0.66),
-                            transformStyle: 'preserve-3d',
-                            backfaceVisibility: 'hidden',
-                        }}
-                    >
-                        {childrenNodes.map((child, index) => {
-                            const angle = (index / childrenCount) * 2 * Math.PI;
-                            let x = currentRadius * Math.cos(angle);
-                            const y = currentRadius * Math.sin(angle);
+                            dir={direction}
+                            style={{
+                                width: circleDiameter,
+                                height: circleDiameter,
+                                bottom: -(circleDiameter * 0.66),
+                                transformStyle: 'preserve-3d',
+                                backfaceVisibility: 'hidden',
+                            }}
+                        >
+                            {childrenNodes.map((child, index) => {
+                                const angle = (index / childrenCount) * 2 * Math.PI;
+                                let x = currentRadius * Math.cos(angle);
+                                const y = currentRadius * Math.sin(angle);
 
-                            if (direction === 'rtl') {
-                                x = -x;
-                            }
+                                if (direction === 'rtl') {
+                                    x = -x;
+                                }
 
-                            const rotationAngle = (angle * 180) / Math.PI;
-                            const isHovered = hoveredIndex === index;
-                            const isAnyHovered = hoveredIndex !== null;
+                                const rotationAngle = (angle * 180) / Math.PI;
+                                const isHovered = hoveredIndex === index;
+                                const isAnyHovered = hoveredIndex !== null;
 
-                            return (
-                                <li
-                                    key={index}
-                                    ref={index === 0 ? childRef : null}
-                                    className='absolute top-1/2 left-1/2'
-                                    style={{
-                                        zIndex: isHovered ? 100 : 10,
-                                        transform: `translate(-50%, -50%) translate3d(${x}px, ${y}px, 0) rotate(${rotationAngle + 90
-                                            }deg)`,
-                                    }}
-                                >
-                                    {/* 
+                                return (
+                                    <li
+                                        key={index}
+                                        ref={index === 0 ? childRef : null}
+                                        className='absolute top-1/2 left-1/2'
+                                        style={{
+                                            zIndex: isHovered ? 100 : 10,
+                                            transform: `translate(-50%, -50%) translate3d(${x}px, ${y}px, 0) rotate(${rotationAngle + 90
+                                                }deg)`,
+                                        }}
+                                    >
+                                        {/* 
                     Using a generic div with role="button" instead of <button> 
                     to allow passing interactive children (like <Link>) without creating invalid HTML nesting.
                   */}
-                                    <div
-                                        role='button'
-                                        tabIndex={disabled ? -1 : 0}
-                                        onClick={() => !disabled && onItemSelect?.(index)}
-                                        onKeyDown={(e) => {
-                                            if (disabled) return;
-                                            if (e.key === 'Enter' || e.key === ' ') {
-                                                e.preventDefault();
-                                                onItemSelect?.(index);
-                                            }
-                                        }}
-                                        onMouseEnter={() => !disabled && setHoveredIndex(index)}
-                                        onMouseLeave={() => !disabled && setHoveredIndex(null)}
-                                        onFocus={() => !disabled && setHoveredIndex(index)}
-                                        onBlur={() => !disabled && setHoveredIndex(null)}
-                                        className={`
+                                        <div
+                                            role='button'
+                                            tabIndex={disabled ? -1 : 0}
+                                            onClick={() => !disabled && onItemSelect?.(index)}
+                                            onKeyDown={(e) => {
+                                                if (disabled) return;
+                                                if (e.key === 'Enter' || e.key === ' ') {
+                                                    e.preventDefault();
+                                                    onItemSelect?.(index);
+                                                }
+                                            }}
+                                            onMouseEnter={() => !disabled && setHoveredIndex(index)}
+                                            onMouseLeave={() => !disabled && setHoveredIndex(null)}
+                                            onFocus={() => !disabled && setHoveredIndex(index)}
+                                            onBlur={() => !disabled && setHoveredIndex(null)}
+                                            className={`
                       block cursor-pointer outline-none text-left
                       focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2
                       rounded-xl transition-all duration-500 ease-out will-change-transform
                       ${isHovered ? 'scale-120 -translate-y-6 z-50' : 'scale-100'}
                       ${isAnyHovered && !isHovered
-                                                ? 'blur-[2px] opacity-40 grayscale'
-                                                : 'blur-0 opacity-100'
-                                            }
+                                                    ? 'blur-[2px] opacity-40 grayscale'
+                                                    : 'blur-0 opacity-100'
+                                                }
                     `}
-                                    >
-                                        {child}
-                                    </div>
-                                </li>
-                            );
-                        })}
-                    </ul>
+                                        >
+                                            {child}
+                                        </div>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
                 </div>
             </div>
         );
