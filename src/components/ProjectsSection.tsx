@@ -50,13 +50,10 @@ const defaultProjects: Project[] = [
   },
   {
     id: 2,
-    title: "AI Chatbot",
-    description:
-      "Intelligent conversational AI chatbot with natural language processing",
-    detailedDescription:
-      "An advanced AI-powered chatbot application featuring natural language understanding and context-aware responses. Built with modern AI technologies, this chatbot provides intelligent conversations, learns from interactions, and offers personalized responses. Features include real-time messaging, conversation history, multi-turn dialogue support, and a clean, intuitive user interface. Perfect for customer support, information retrieval, and interactive assistance.",
-    image:
-      "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80",
+    title: "ThinkAI Chatbot",
+    description: "An intelligent conversational AI assistant with a modern, dark-themed interface.",
+    detailedDescription: "ThinkAI is a sophisticated conversational AI platform designed for seamless interactions. It features a clean, intuitive dark-themed interface with quick prompt suggestions, conversation history, and a powerful natural language processing core. Built with modern web technologies, it offers a premium user experience for efficient brainstorming, problem-solving, and AI-driven assistance.",
+    image: "/images/thinkai.png",
     tags: ["AI", "Chatbot", "NLP", "React"],
     githubUrl: "https://github.com/Rathimax/Ai-chatbot",
     liveUrl: "https://ai-chatbot-one-teal-95.vercel.app",
