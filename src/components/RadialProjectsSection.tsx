@@ -28,13 +28,22 @@ interface Project {
 
 const projects: Project[] = [
     {
+        id: 11,
+        title: "DOCKFLOW AI",
+        description: "A powerful AI-driven suite for PDF and document tools with an evolved workspace.",
+        detailedDescription: "DocFlow AI is a sophisticated document intelligence platform providing a comprehensive suite of PDF tools. It features AI-powered capabilities for seamless document manipulation, emphasizing absolute privacy and a premium user experience with a sleek, dark-themed design.",
+        image: "/images/dockflow-ai.png",
+        tags: ["React", "TypeScript", "Tailwind CSS", "PDF manipulation"],
+        githubUrl: "https://github.com/Rathimax/Dockflow-AI",
+        liveUrl: "https://dockflow-ai.vercel.app",
+    },
+    {
         id: 1,
         title: "Portfolio Website",
         description: "Personal portfolio website built with React and Tailwind CSS",
         detailedDescription:
             "A modern, responsive portfolio website showcasing my skills and projects. Built with React for dynamic components, styled with Tailwind CSS for rapid development, and enhanced with Framer Motion for smooth animations. Features include a hero section with animated text, project showcase with interactive cards, contact form, and mobile-responsive design.",
-        image:
-            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+        image: "/images/portfolio.png",
         tags: ["React", "Tailwind CSS", "Framer Motion"],
         githubUrl: "https://github.com/Rathimax/Portfolio",
         liveUrl: "https://abhayrajrathiportfolio.netlify.app",
