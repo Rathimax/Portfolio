@@ -1,14 +1,20 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 import Typewriter from "./Typewriter";
 import { ShaderAnimation } from "./ui/shader-animation";
+import { CursorDrivenParticleTypography } from "./ui/CursorDrivenParticleTypography";
 
 const HeroSection = () => {
   const [marqueeText, setMarqueeText] = useState("");
   const [isAnimating, setIsAnimating] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+
+  const nameParts = useMemo(() => [
+    { text: "I'M ", color: "#FFFFFF" },
+    { text: "ABHAY RAJ RATHI", color: "#4ade80" }
+  ], []);
 
 
 
@@ -61,39 +67,25 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-xl md:text-2xl mb-4 text-green-400"
+          className="text-xl md:text-2xl mb-1 text-green-400"
         >
           Hi There!
         </motion.p>
 
-        <motion.h1
-          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 tracking-tight text-gray-900 dark:text-white"
-          variants={nameVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          I'M{" "}
-          <span className="inline-block">
-            {nameLetters.map((letter, i) => (
-              <motion.span
-                key={i}
-                custom={i}
-                variants={letterVariants}
-                initial="hidden"
-                animate="visible"
-                className={`inline-block ${letter !== " " ? "text-green-600 dark:text-green-400 font-extrabold" : "text-gray-900 dark:text-white"}`}
-              >
-                {letter === " " ? "\u00A0" : letter}
-              </motion.span>
-            ))}
-          </span>
-        </motion.h1>
+        <div className="flex flex-col items-center justify-center mb-0 h-[140px] md:h-[130px] lg:h-[160px]">
+          <CursorDrivenParticleTypography 
+            parts={nameParts}
+            fontSize={75}
+            particleDensity={3}
+            className="w-full h-full min-h-0"
+          />
+        </div>
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 0.5 }}
-          className="text-xl md:text-2xl mb-8 text-gray-700 dark:text-gray-300"
+          transition={{ delay: 0.8, duration: 0.5 }}
+          className="text-xl md:text-2xl mb-4 text-gray-700 dark:text-gray-300"
         >
           I'm a <Typewriter words={["Developer", "Designer", "Creator", "Problem Solver"]} />
         </motion.p>
