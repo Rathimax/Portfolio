@@ -110,15 +110,14 @@ const projects: Project[] = [
     },
     {
         id: 7,
-        title: "Website",
+        title: "Beige & Beans Cafe Store",
         description:
             "Modern responsive website with clean design and interactive elements",
         detailedDescription:
             "A fully responsive website featuring modern design principles and interactive elements. Built with semantic HTML5, styled with CSS3 including flexbox and grid layouts, and enhanced with JavaScript for dynamic interactions. Features include smooth scrolling navigation, animated sections, contact forms with validation, and optimized performance across all devices.",
-        image:
-            "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
+        image: "/images/beige-and-beans-cafe.png",
         tags: ["HTML", "CSS", "JavaScript"],
-        githubUrl: "https://github.com/Rathimax/functional-webpage",
+        githubUrl: "https://github.com/Rathimax/Coffee-Shop-Website",
         liveUrl: "https://functional-webpage.vercel.app",
     },
     {
