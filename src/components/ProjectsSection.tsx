@@ -59,19 +59,6 @@ const defaultProjects: Project[] = [
     liveUrl: "https://ai-chatbot-one-teal-95.vercel.app",
   },
   {
-    id: 3,
-    title: "Weather Forecast App",
-    description:
-      "Real-time weather forecasting application with location services",
-    detailedDescription:
-      "A comprehensive weather application that provides real-time weather data and forecasts. Features include current weather conditions, 5-day forecast, location-based weather detection using geolocation API, search functionality for different cities, and responsive design. Built with vanilla JavaScript and integrated with OpenWeatherMap API for accurate weather data.",
-    image:
-      "https://images.unsplash.com/photo-1580193769210-b8d1c049a7d9?w=800&q=80",
-    tags: ["JavaScript", "API Integration", "CSS"],
-    githubUrl: "https://github.com/Rathimax/Weather-web-app",
-    liveUrl: "https://weather-web-app-psi-three.vercel.app",
-  },
-  {
     id: 4,
     title: "Weather Forecast App v2",
     description:

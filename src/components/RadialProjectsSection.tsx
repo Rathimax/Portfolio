@@ -60,32 +60,19 @@ const projects: Project[] = [
     },
     {
         id: 3,
-        title: "Weather Forecast App",
+        title: "City Guard",
         description:
-            "Real-time weather forecasting application with location services",
+            "Revolutionizing local governance through AI-powered citizen issue reporting and streamlined municipal response.",
         detailedDescription:
-            "A comprehensive weather application that provides real-time weather data and forecasts. Features include current weather conditions, 5-day forecast, location-based weather detection using geolocation API, search functionality for different cities, and responsive design. Built with vanilla JavaScript and integrated with OpenWeatherMap API for accurate weather data.",
+            "City Guard is a smart governance platform that bridges the gap between citizens and local authorities. By leveraging advanced AI and geospatial technologies, it provides a seamless system for reporting urban issues—from potholes to waste management—and ensures efficient, transparent resolution. Designed with a modern, user-centric interface, City Guard empowers communities to actively participate in improving their civic infrastructure.",
         image:
-            "https://images.unsplash.com/photo-1580193769210-b8d1c049a7d9?w=800&q=80",
-        tags: ["JavaScript", "API Integration", "CSS"],
-        githubUrl: "https://github.com/Rathimax/Weather-web-app",
-        liveUrl: "https://weather-web-app-psi-three.vercel.app",
+            "/images/City_Guard.png",
+        tags: ["Java Script", "Cloudinary API"],
+        githubUrl: "https://github.com/Rathimax/City-Guard-",
+        liveUrl: "https://city-guard-chi.vercel.app",
     },
     {
         id: 4,
-        title: "Weather Forecast App v2",
-        description:
-            "Enhanced weather forecasting application with improved UI and additional features",
-        detailedDescription:
-            "An upgraded version of the weather app with enhanced user interface and additional features. Includes hourly forecasts, weather maps, severe weather alerts, improved data visualization with charts, dark/light theme toggle, and better mobile optimization. Enhanced with modern CSS animations and improved API error handling.",
-        image:
-            "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&q=80",
-        tags: ["JavaScript", "Weather API"],
-        githubUrl: "https://github.com/Rathimax/Weather-app-V2",
-        liveUrl: "https://weatherappversion2.vercel.app",
-    },
-    {
-        id: 5,
         title: "Weather Forecast App v3",
         description:
             "Latest version with advanced features and modern design",
@@ -98,7 +85,7 @@ const projects: Project[] = [
         liveUrl: "https://weather-app-v3-five.vercel.app",
     },
     {
-        id: 6,
+        id: 5,
         title: "Space Shooter Game",
         description: "Interactive browser-based space shooter with multiple levels",
         detailedDescription:
@@ -109,19 +96,19 @@ const projects: Project[] = [
         liveUrl: "https://spaceshooter-game.vercel.app",
     },
     {
-        id: 7,
+        id: 6,
         title: "Beige & Beans Cafe Store",
         description:
             "Modern responsive website with clean design and interactive elements",
         detailedDescription:
             "A fully responsive website featuring modern design principles and interactive elements. Built with semantic HTML5, styled with CSS3 including flexbox and grid layouts, and enhanced with JavaScript for dynamic interactions. Features include smooth scrolling navigation, animated sections, contact forms with validation, and optimized performance across all devices.",
-        image: "/images/beige-and-beans-cafe.png",
+        image: "/images/beige-and-beans-cafe2.png",
         tags: ["HTML", "CSS", "JavaScript"],
         githubUrl: "https://github.com/Rathimax/Coffee-Shop-Website",
         liveUrl: "https://functional-webpage.vercel.app",
     },
     {
-        id: 8,
+        id: 7,
         title: "Gym Progress Tracker",
         description:
             "Track your fitness journey with detailed workout logs and progress analytics",
@@ -134,7 +121,7 @@ const projects: Project[] = [
         liveUrl: "https://fittrack-rathiabhay-app.vercel.app",
     },
     {
-        id: 9,
+        id: 8,
         title: "Habit Tracker iOS",
         description:
             "Native iOS habit tracking app built with Swift and SwiftUI",
