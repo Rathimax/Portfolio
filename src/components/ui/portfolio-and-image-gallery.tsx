@@ -219,6 +219,7 @@ export const RadialScrollGallery = forwardRef<
                         scrollTrigger: {
                             trigger: pinRef.current,
                             pin: true,
+                            fastScrollEnd: true,
                             start: startTrigger,
                             end: `+=${scrollDuration}`,
                             scrub: 1,
