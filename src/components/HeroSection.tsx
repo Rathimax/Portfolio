@@ -141,6 +141,9 @@ const HeroSection = () => {
         ></motion.div>
       </div>
       {/* End Main content */}
+      
+      {/* Bottom Gradient Fade */}
+      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-[#f9f6ee] dark:to-black pointer-events-none z-10" />
     </section>
   );
 };

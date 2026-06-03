@@ -325,6 +325,9 @@ export default function DemoRadialScrollGalleryBento() {
                         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                             A showcase of my design and development work
                         </p>
+                        <p className="text-sm text-muted-foreground/70 max-w-2xl mx-auto mt-1 italic">
+                            (Tap on any card to explore project details)
+                        </p>
                     </motion.div>
                 </div>
 

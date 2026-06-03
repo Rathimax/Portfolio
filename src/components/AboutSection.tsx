@@ -153,7 +153,7 @@ const AboutSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mt-20 pt-16 border-t border-gray-200 dark:border-gray-800"
+          className="mt-20 pt-16"
         >
           <h3 className="text-4xl font-bold mb-16 text-center tracking-tight">Technical Arsenal</h3>
 
