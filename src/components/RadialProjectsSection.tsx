@@ -77,7 +77,7 @@ const projects: Project[] = [
         ],
         tags: ["React", "Tailwind CSS", "Framer Motion"],
         githubUrl: "https://github.com/Rathimax/Portfolio",
-        liveUrl: "https://abhayrajrathiportfolio.netlify.app",
+        liveUrl: "https://abhayportfolio-mauve.vercel.app",
     },
     {
         id: 2,

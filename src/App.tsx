@@ -5,6 +5,7 @@ import ThemeToggleButton from "./components/ThemeToggleButton";
 import Preloader from "./components/Preloader";
 import ScrollProgressBar from "./components/ScrollProgressBar";
 import routes from "tempo-routes";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -97,6 +98,7 @@ function App() {
         {import.meta.env.VITE_TEMPO === "true" && useRoutes(routes)}
         <ThemeToggleButton isDarkMode={isDarkMode} onToggle={toggleTheme} />
       </Suspense>
+      <Analytics />
     </>
   );
 }
