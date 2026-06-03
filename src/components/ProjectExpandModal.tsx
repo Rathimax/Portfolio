@@ -117,14 +117,25 @@ export default function ProjectExpandModal({
       }
     : { opacity: 0, scale: 0.9 };
 
-  const target = {
-    top: 0,
-    left: 0,
-    width: "100vw",
-    height: "100dvh",
-    borderRadius: "0px",
-    opacity: 1,
-  };
+  const isDesktop = typeof window !== "undefined" ? window.innerWidth >= 768 : false;
+
+  const target = isDesktop 
+    ? {
+        top: "5dvh",
+        left: "5vw",
+        width: "90vw",
+        height: "90dvh",
+        borderRadius: "24px",
+        opacity: 1,
+      }
+    : {
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100dvh",
+        borderRadius: "0px",
+        opacity: 1,
+      };
 
   return (
     <>
@@ -145,7 +156,7 @@ export default function ProjectExpandModal({
           {/* Expanding Card */}
           <motion.div
             key={`modal-${project.id}`}
-            className="fixed z-[210] overflow-hidden bg-[#f9f6ee] dark:bg-black text-foreground"
+            className="fixed z-[210] overflow-hidden bg-[#f9f6ee] dark:bg-black text-foreground shadow-2xl border border-border/50"
             style={{ position: "fixed" }}
             initial={initial}
             animate={{ ...target, transition: springOpen }}

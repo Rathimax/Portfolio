@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
+import { ContactFormModal } from "./ContactFormModal";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "./ui/tooltip";
-import { Github, Instagram, Linkedin, Globe, FileText } from "lucide-react";
+import { Github, Instagram, Linkedin, Globe, FileText, Mail } from "lucide-react";
 
 interface SocialLinkProps {
   href: string;
@@ -40,6 +41,8 @@ const SocialLink = ({ href, icon, label }: SocialLinkProps) => {
 };
 
 const ContactSection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const socialLinks = [
     {
       href: "https://www.linkedin.com/in/abhayrajrathi/",
@@ -66,7 +69,7 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="pt-20 pb-8 px-4 md:px-8 lg:px-16 bg-transparent"
+      className="pt-16 md:pt-20 pb-8 px-4 md:px-8 lg:px-16 bg-transparent"
     >
       <div className="max-w-6xl mx-auto">
         <motion.div
@@ -76,10 +79,10 @@ const ContactSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
             FIND ME ON
           </h2>
-          <p className="text-lg text-muted-foreground mb-8">
+          <p className="text-base md:text-lg text-muted-foreground mb-8">
             Feel free to connect with me
           </p>
 
@@ -94,20 +97,35 @@ const ContactSection = () => {
             ))}
           </div>
 
-          <div className="mt-12">
+          <div className="mt-12 flex flex-wrap justify-center gap-6">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-block"
             >
               <Button
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 h-auto text-lg font-medium flex items-center gap-2"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 md:px-8 py-4 md:py-6 h-auto text-base md:text-lg font-medium flex items-center gap-2"
                 onClick={() => {
                   window.open("/Resume_Abhay_Raj_Rathi.pdf", "_blank");
                 }}
               >
                 <FileText className="w-5 h-5" />
                 Download Resume
+              </Button>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block"
+            >
+              <Button
+                variant="outline"
+                className="border-primary text-primary hover:bg-primary/10 px-6 md:px-8 py-4 md:py-6 h-auto text-base md:text-lg font-medium flex items-center gap-2 bg-transparent"
+                onClick={() => setIsModalOpen(true)}
+              >
+                <Mail className="w-5 h-5" />
+                Email / Contact Me
               </Button>
             </motion.div>
           </div>
@@ -129,6 +147,11 @@ const ContactSection = () => {
           </motion.div>
         </div>
       </div>
+
+      <ContactFormModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </section>
   );
 };

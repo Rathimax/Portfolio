@@ -319,13 +319,13 @@ export default function DemoRadialScrollGalleryBento() {
                         viewport={{ once: true }}
                         className="max-w-7xl mx-auto px-4"
                     >
-                        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+                        <h2 className="text-3xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
                             PROJECTS
                         </h2>
-                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                        <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
                             A showcase of my design and development work
                         </p>
-                        <p className="text-sm text-muted-foreground/70 max-w-2xl mx-auto mt-1 italic">
+                        <p className="text-xs md:text-sm text-muted-foreground/70 max-w-2xl mx-auto mt-1 italic">
                             (Tap on any card to explore project details)
                         </p>
                     </motion.div>
@@ -363,7 +363,7 @@ export default function DemoRadialScrollGalleryBento() {
                                         <div className={`relative w-full h-full transition-all duration-500 [transform-style:preserve-3d] ${isFlipped ? '[transform:rotateY(180deg)]' : ''}`}>
                                             {/* Front Face */}
                                             <Card className="absolute inset-0 w-full h-full flex flex-col overflow-hidden border border-border bg-background text-left [backface-visibility:hidden]">
-                                                <div className="h-48 shrink-0 overflow-hidden">
+                                                <div className="h-40 shrink-0 overflow-hidden">
                                                     <img
                                                         src={project.image}
                                                         alt={project.title}
@@ -371,8 +371,8 @@ export default function DemoRadialScrollGalleryBento() {
                                                     />
                                                 </div>
                                                 <CardHeader className="pb-2">
-                                                    <CardTitle className="text-xl font-bold">{project.title}</CardTitle>
-                                                    <CardDescription className="line-clamp-2 text-sm text-muted-foreground">{project.description}</CardDescription>
+                                                    <CardTitle className="text-lg font-bold">{project.title}</CardTitle>
+                                                    <CardDescription className="line-clamp-2 text-xs text-muted-foreground">{project.description}</CardDescription>
                                                 </CardHeader>
                                                 <CardContent className="flex-grow pb-4 overflow-hidden">
                                                     <div className="flex flex-wrap gap-2">
@@ -380,13 +380,13 @@ export default function DemoRadialScrollGalleryBento() {
                                                             <Badge
                                                                 key={idx}
                                                                 variant="secondary"
-                                                                className="px-2 py-0.5 text-[10px] bg-primary/10 text-primary border-none font-medium"
+                                                                className="px-2 py-0.5 text-[9px] bg-primary/10 text-primary border-none font-medium"
                                                             >
                                                                 {tag}
                                                             </Badge>
                                                         ))}
                                                     </div>
-                                                    <p className="mt-4 text-[10px] text-primary/60 font-medium uppercase tracking-wider">Tap to view details</p>
+                                                    <p className="mt-4 text-[9px] text-primary/60 font-medium uppercase tracking-wider">Tap to view details</p>
                                                 </CardContent>
                                                 <CardFooter className="flex justify-between items-center pt-0 pb-6 px-4 mt-auto border-t border-border/10 bg-background/50">
                                                     {project.githubUrl && (
@@ -411,25 +411,33 @@ export default function DemoRadialScrollGalleryBento() {
                                             {/* Back Face */}
                                             <Card className="absolute inset-0 w-full h-full flex flex-col overflow-hidden border border-border bg-gradient-to-br from-background via-primary/[0.02] to-background text-left [backface-visibility:hidden] [transform:rotateY(180deg)]">
                                                 <CardHeader className="pb-2 border-b border-border/50">
-                                                    <CardTitle className="text-xl font-bold text-primary">{project.title}</CardTitle>
+                                                    <CardTitle className="text-lg font-bold text-primary">{project.title}</CardTitle>
                                                     <CardDescription className="text-xs font-semibold uppercase tracking-widest text-primary/60">Project Overview</CardDescription>
                                                 </CardHeader>
                                                 <CardContent className="flex-grow py-4 overflow-y-auto custom-scrollbar">
-                                                    <p className="text-sm leading-relaxed text-muted-foreground mb-4">
-                                                        {project.detailedDescription}
-                                                    </p>
+                                                    <div className="text-xs leading-relaxed text-muted-foreground mb-4 space-y-2">
+                                                        {project.detailedDescription ? (
+                                                            <p>{project.detailedDescription}</p>
+                                                        ) : (
+                                                            <ul className="list-disc pl-4 space-y-1 text-xs text-muted-foreground/90">
+                                                                {project.features?.map((feature, fIdx) => (
+                                                                    <li key={fIdx}>{feature}</li>
+                                                                ))}
+                                                            </ul>
+                                                        )}
+                                                    </div>
                                                     <div className="flex flex-wrap gap-2">
                                                         {project.tags.map((tag, idx) => (
                                                             <Badge
                                                                 key={idx}
                                                                 variant="secondary"
-                                                                className="px-2 py-0.5 text-[10px] bg-primary/20 text-primary border-none font-semibold"
+                                                                className="px-2 py-0.5 text-[9px] bg-primary/20 text-primary border-none font-semibold"
                                                             >
                                                                 {tag}
                                                             </Badge>
                                                         ))}
                                                     </div>
-                                                    <p className="mt-6 text-[10px] text-primary/60 font-medium uppercase tracking-wider">Tap to go back</p>
+                                                    <p className="mt-6 text-[9px] text-primary/60 font-medium uppercase tracking-wider">Tap to go back</p>
                                                 </CardContent>
                                                 <CardFooter className="flex justify-between items-center pt-0 pb-6 px-4 mt-auto border-t border-border/50 bg-background/50">
                                                     {project.githubUrl && (
