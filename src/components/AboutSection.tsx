@@ -8,15 +8,7 @@ interface Skill {
 }
 
 const AboutSection = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const profileImages = ["/images/profile.jpeg", "/images/profile-2.jpeg"];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % profileImages.length);
-    }, 8000);
-    return () => clearInterval(interval);
-  }, []);
 
   const technicalSkills: Skill[] = [
     {
@@ -115,21 +107,16 @@ const AboutSection = () => {
             className="space-y-6"
           >
             <p className="text-lg leading-relaxed">
-              I discovered my passion for programming in high school, and since
-              then, I've built skills across multiple domains, from web
-              technologies to 3D modeling.
+              I am a passionate software engineer specializing in <span className="font-bold italic">full-stack development</span>, <span className="font-bold italic">AI integrations</span>, and crafting <span className="font-bold italic">highly interactive digital experiences</span>. Over the years, my work has evolved from foundational programming to architecting complex, <span className="font-bold italic">production-ready applications</span>.
             </p>
             <p className="text-lg leading-relaxed">
-              I am fluent in classics like C++, JavaScript, Python, 3D Modeling
-              and React.
+              My technical expertise spans modern web technologies like <span className="font-bold italic">Next.js</span>, <span className="font-bold italic">React</span>, and <span className="font-bold italic">Node.js</span>, alongside robust backend ecosystems like <span className="font-bold italic">Spring Boot</span> and <span className="font-bold italic">MongoDB</span>. I am also deeply invested in <span className="font-bold italic">native iOS development</span> using <span className="font-bold italic">Swift</span> and <span className="font-bold italic">SwiftUI</span>.
             </p>
             <p className="text-lg leading-relaxed">
-              My field of interest includes building new Web Technologies and
-              Products, and also areas related to UI Design.
+              Currently, my main focus lies in integrating <span className="font-bold italic">advanced AI capabilities</span>—such as <span className="font-bold italic">LLMs</span>, <span className="font-bold italic">RAG pipelines</span>, and <span className="font-bold italic">computer vision</span>—into practical, high-performance web and mobile products.
             </p>
             <p className="text-lg leading-relaxed">
-              Whenever possible, I also apply my passion for developing products
-              with modern JavaScript libraries and frameworks like React.js.
+              Whether it's engineering a <span className="font-bold italic">complex document processing pipeline</span>, crafting a <span className="font-bold italic">fluid animated UI</span>, or architecting a <span className="font-bold italic">real-time citizen reporting platform</span>, I thrive on bridging the gap between <span className="font-bold italic">cutting-edge technology</span> and <span className="font-bold italic">exceptional user experience</span>.
             </p>
 
           </motion.div>
@@ -144,18 +131,14 @@ const AboutSection = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-green-400 rounded-full blur-md opacity-20 transform -translate-x-4 translate-y-4"></div>
               <div className="relative border-4 border-green-400 rounded-full overflow-hidden w-64 h-64 md:w-80 md:h-80">
-                <AnimatePresence>
                   <motion.img
-                    key={currentImageIndex}
-                    src={profileImages[currentImageIndex]}
+                    src="/images/profile-2.jpeg"
                     alt="Abhay Raj Rathi"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 3, ease: "easeInOut" }}
+                    transition={{ duration: 1.5, ease: "easeInOut" }}
                     className="absolute inset-0 w-full h-full object-cover"
                   />
-                </AnimatePresence>
               </div>
               <div className="absolute -bottom-4 -right-4 bg-white dark:bg-black p-3 rounded-full border-2 border-green-400 transition-colors duration-300">
                 <span className="text-green-400 text-xl font-bold">ARR</span>
