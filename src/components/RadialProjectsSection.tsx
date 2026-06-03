@@ -487,17 +487,16 @@ export default function DemoRadialScrollGalleryBento() {
                                             </Badge>
                                             <div className="flex flex-col gap-2 items-end">
                                                 <div
-                                                    className={`group/link h-6 flex items-center rounded-full bg-primary text-primary-foreground transition-all duration-500 ease-out overflow-hidden ${isActive ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-2'
-                                                        } w-6 hover:w-24 px-1.5 hover:px-3 shadow-lg`}
-                                                    onClick={(e) => e.stopPropagation()}
+                                                    className={`group/link h-6 flex items-center justify-center rounded-full bg-primary text-primary-foreground transition-all duration-500 ease-out overflow-hidden ${isActive ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-2'
+                                                        } w-6 hover:w-24 shadow-lg`}
                                                 >
-                                                    <div className="flex items-center gap-1.5">
+                                                    <div className="flex items-center justify-center">
                                                         <ArrowUpRight
                                                             size={12}
                                                             className={`shrink-0 transition-transform duration-500 ${isActive ? 'rotate-0' : '-rotate-45'
                                                                 }`}
                                                         />
-                                                        <span className="text-[10px] font-bold whitespace-nowrap opacity-0 group-hover/link:opacity-100 transition-opacity duration-300 delay-100 uppercase">
+                                                        <span className="text-[10px] font-bold whitespace-nowrap overflow-hidden max-w-0 opacity-0 group-hover/link:max-w-[40px] group-hover/link:opacity-100 group-hover/link:ml-1.5 transition-all duration-500 ease-out uppercase">
                                                             View
                                                         </span>
                                                     </div>
