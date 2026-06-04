@@ -105,7 +105,7 @@ const defaultProjects: Project[] = [
     image: "/images/beige-and-beans-cafe.png",
     tags: ["HTML", "CSS", "JavaScript", "Responsive Design"],
     githubUrl: "https://github.com/Rathimax/Coffee-Shop-Website",
-    liveUrl: "https://functional-webpage.vercel.app",
+    liveUrl: "https://coffee-shop-website-eight-gamma.vercel.app",
   },
   {
     id: 8,
@@ -261,7 +261,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                           </a>
                         </Button>
                       )}
-                      {project.liveUrl && project.title !== "Coming Soon" && (
+                      {project.liveUrl && project.title !== "Coming Soon" && project.title !== "Portfolio Website" && (
                         <Button variant="default" size="sm" asChild>
                           <a
                             href={project.liveUrl}
@@ -272,6 +272,11 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                             <ExternalLink className="mr-2 h-4 w-4" />
                             Live Demo
                           </a>
+                        </Button>
+                      )}
+                      {project.liveUrl && project.title === "Portfolio Website" && (
+                        <Button variant="outline" size="sm" className="text-xs px-2 border-primary/20 bg-primary/5 text-primary/80 hover:bg-primary/5 hover:text-primary/80 cursor-default" onClick={handleButtonClick}>
+                          (You are currently on the portfolio)
                         </Button>
                       )}
                     </CardFooter>
@@ -316,7 +321,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                           </a>
                         </Button>
                       )}
-                      {project.liveUrl && project.title !== "Coming Soon" && (
+                      {project.liveUrl && project.title !== "Coming Soon" && project.title !== "Portfolio Website" && (
                         <Button variant="default" size="sm" asChild>
                           <a
                             href={project.liveUrl}
@@ -327,6 +332,11 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                             <ExternalLink className="mr-2 h-4 w-4" />
                             Live Demo
                           </a>
+                        </Button>
+                      )}
+                      {project.liveUrl && project.title === "Portfolio Website" && (
+                        <Button variant="outline" size="sm" className="text-xs px-2 border-primary/20 bg-primary/5 text-primary/80 hover:bg-primary/5 hover:text-primary/80 cursor-default" onClick={handleButtonClick}>
+                          (You are currently on the portfolio)
                         </Button>
                       )}
                     </CardFooter>

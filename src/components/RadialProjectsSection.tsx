@@ -205,7 +205,7 @@ const projects: Project[] = [
         ],
         tags: ["HTML", "CSS", "JavaScript"],
         githubUrl: "https://github.com/Rathimax/Coffee-Shop-Website",
-        liveUrl: "https://functional-webpage.vercel.app",
+        liveUrl: "https://coffee-shop-website-eight-gamma.vercel.app",
     },
     {
         id: 7,
@@ -397,12 +397,17 @@ export default function DemoRadialScrollGalleryBento() {
                                                             </a>
                                                         </Button>
                                                     )}
-                                                    {project.liveUrl && project.title !== "Coming Soon" && (
+                                                    {project.liveUrl && project.title !== "Coming Soon" && project.title !== "Portfolio Website" && (
                                                         <Button variant="default" size="sm" className="h-8 text-xs rounded-md shadow-sm transition-all duration-300 hover:shadow-md active:scale-95 px-3 w-fit" asChild onClick={(e) => e.stopPropagation()}>
                                                             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                                                                 <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
                                                                 Live Demo
                                                             </a>
+                                                        </Button>
+                                                    )}
+                                                    {project.liveUrl && project.title === "Portfolio Website" && (
+                                                        <Button variant="outline" size="sm" className="h-8 text-[10px] rounded-md px-3 w-fit border-primary/20 bg-primary/5 text-primary/80 hover:bg-primary/5 hover:text-primary/80 cursor-default" onClick={(e) => e.stopPropagation()}>
+                                                            (You are currently on the portfolio)
                                                         </Button>
                                                     )}
                                                 </CardFooter>
@@ -448,12 +453,17 @@ export default function DemoRadialScrollGalleryBento() {
                                                             </a>
                                                         </Button>
                                                     )}
-                                                    {project.liveUrl && project.title !== "Coming Soon" && (
+                                                    {project.liveUrl && project.title !== "Coming Soon" && project.title !== "Portfolio Website" && (
                                                         <Button variant="default" size="sm" className="h-8 text-xs rounded-md shadow-sm transition-all duration-300 hover:shadow-md active:scale-95 px-3 w-fit" asChild onClick={(e) => e.stopPropagation()}>
                                                             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                                                                 <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
                                                                 Live Demo
                                                             </a>
+                                                        </Button>
+                                                    )}
+                                                    {project.liveUrl && project.title === "Portfolio Website" && (
+                                                        <Button variant="outline" size="sm" className="h-8 text-[10px] rounded-md px-3 w-fit border-primary/20 bg-primary/5 text-primary/80 hover:bg-primary/5 hover:text-primary/80 cursor-default" onClick={(e) => e.stopPropagation()}>
+                                                            (You are currently on the portfolio)
                                                         </Button>
                                                     )}
                                                 </CardFooter>

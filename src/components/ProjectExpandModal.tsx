@@ -191,7 +191,7 @@ export default function ProjectExpandModal({
                       </a>
                     </Button>
                   )}
-                  {project.liveUrl && (
+                  {project.liveUrl && project.title !== "Portfolio Website" && (
                     <Button
                       asChild
                       size="sm"
@@ -206,6 +206,16 @@ export default function ProjectExpandModal({
                         <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
                         Live Demo
                       </a>
+                    </Button>
+                  )}
+                  {project.liveUrl && project.title === "Portfolio Website" && (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="border-green-500/30 bg-green-500/10 text-green-500 h-8 text-xs font-semibold hover:bg-green-500/10 hover:text-green-500 cursor-default"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      (You are currently on the portfolio)
                     </Button>
                   )}
                 </div>
