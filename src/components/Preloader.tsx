@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { AppleHelloEnglishEffect } from "./ui/apple-hello-effect";
 
 interface PreloaderProps {
   onComplete: () => void;
@@ -7,85 +8,69 @@ interface PreloaderProps {
 
 const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   const [isVisible, setIsVisible] = useState(true);
+  const [isSliding, setIsSliding] = useState(false);
 
-  useEffect(() => {
-    // Minimum display time for visual impact
-    const timer = setTimeout(() => {
-      setIsVisible(false);
-      setTimeout(onComplete, 500); // Wait for fade-out animation
-    }, 1500);
+  // Detect theme — same logic as App.tsx
+  const getIsDark = () => {
+    const saved = localStorage.getItem("theme");
+    if (saved) return saved === "dark";
+    return window.matchMedia?.("(prefers-color-scheme: dark)").matches ?? true;
+  };
+  const [isDark] = useState<boolean>(getIsDark);
 
-    return () => clearTimeout(timer);
-  }, [onComplete]);
+  // Step 1: drawing finishes → brief pause → slide up
+  const handleDrawComplete = () => {
+    setTimeout(() => setIsSliding(true), 350);
+  };
+
+  // Step 2: slide-up animation done → fade out overlay → call onComplete
+  const handleSlideComplete = () => {
+    if (!isSliding) return;
+    setIsVisible(false);
+    setTimeout(onComplete, 650);
+  };
 
   return (
     <AnimatePresence>
       {isVisible && (
         <motion.div
+          key="preloader-overlay"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-light-cream dark:bg-black transition-colors duration-300"
+          transition={{ duration: 0.65, ease: "easeInOut" }}
+          className={`fixed inset-0 z-[100] flex items-center justify-center ${
+            isDark ? "bg-[#0a0a0a]" : "bg-[#f5f0e8]"
+          }`}
         >
-          {/* Background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-light-cream via-gray-100 to-light-cream dark:from-black dark:via-gray-900 dark:to-black opacity-90" />
-          
-          {/* Animated content */}
-          <div className="relative z-10 flex flex-col items-center">
-            {/* Logo container with pulse effect */}
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="relative"
-            >
-              {/* Glow effect */}
-              <motion.div
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.5, 0.8, 0.5],
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute inset-0 bg-green-400 rounded-full blur-xl opacity-50"
-              />
-              
-              {/* Main logo */}
-              <motion.div
-                animate={{
-                  scale: [1, 1.05, 1],
-                }}
-                transition={{
-                  duration: 1,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="relative w-24 h-24 flex items-center justify-center bg-white dark:bg-gray-900 rounded-full border-4 border-green-400 shadow-lg"
-              >
-                <span className="text-3xl font-bold text-green-500">ARR</span>
-              </motion.div>
-            </motion.div>
-
-            {/* Loading dots */}
-            <div className="flex gap-2 mt-8">
-              {[0, 1, 2].map((i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0.3 }}
-                  animate={{ opacity: [0.3, 1, 0.3] }}
-                  transition={{
-                    duration: 1,
-                    repeat: Infinity,
-                    delay: i * 0.2,
-                  }}
-                  className="w-3 h-3 bg-green-400 rounded-full"
-                />
-              ))}
-            </div>
+          {/* Radial ambient glow */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div
+              className={`w-[500px] h-[200px] rounded-full blur-3xl ${
+                isDark ? "bg-white/5" : "bg-black/5"
+              }`}
+            />
           </div>
+
+          {/* Hello text — slides up on exit */}
+          <motion.div
+            animate={
+              isSliding
+                ? { y: -110, opacity: 0 }
+                : { y: 0, opacity: 1 }
+            }
+            transition={
+              isSliding
+                ? { duration: 0.65, ease: [0.4, 0, 0.2, 1] }
+                : { duration: 0 }
+            }
+            onAnimationComplete={handleSlideComplete}
+          >
+            <AppleHelloEnglishEffect
+              speed={0.9}
+              className={`h-24 md:h-32 ${isDark ? "text-white" : "text-gray-900"}`}
+              onAnimationComplete={handleDrawComplete}
+            />
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
